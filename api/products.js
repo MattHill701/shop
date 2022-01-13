@@ -12,7 +12,8 @@ const {
   getProductsByCategory,
   getProductsBySeller,
   getProductsByPriceRange,
-  addReview
+  addReview,
+  getProductsById
   } = require("../db");
 
 productsRouter.get("/", async (req, res) => {
@@ -121,6 +122,18 @@ productsRouter.post("/category", async (req, res, next) => {
   const { category } = req.body
   try{
   const product = await getProductsByCategory(category);
+  res.send({
+    product,
+  });
+} catch(error){
+  next(error)
+}
+});
+
+productsRouter.post("/id", async (req, res, next) => {
+  const { id } = req.body
+  try{
+  const product = await getProductsById(id);
   res.send({
     product,
   });

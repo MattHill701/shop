@@ -2,6 +2,33 @@ header {
   text-align: center;
 }
 
+img.pic {
+  width: 540px; /* you can use % */
+  height: auto;
+}
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(DTM-Sans.otf);
+}
+
+* {
+  font-family: myFirstFont;
+  background-color: black;
+  color: white;
+}
+
 .nav-bar {
-  background-color: lightblue;
+  border: 5px white;
+  display: flex;
+  margin: auto;
+}
+
+.pro {
+  border: 5px white;
+}
+
+.nav-bar-link {
+  padding: 20px;
+  margin: auto;
 }

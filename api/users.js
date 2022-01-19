@@ -18,9 +18,9 @@ usersRouter.get("/", async (req, res) => {
 
 usersRouter.patch("/myCart", async (req, res, next) => {
   console.log("request to users");
-  const { cart, id } = req.body
+  const { cart, currentprice, id } = req.body
   try{
-  const myCart = await updateCart(cart, id);
+  const myCart = await updateCart(cart, currentprice, id);
 
   res.send({
     myCart, 

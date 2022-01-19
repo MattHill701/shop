@@ -5,17 +5,18 @@ const DB_URL =
 const client = new Client(DB_URL);
 // database methods
 
-async function updateCart(cart, id) {
+async function updateCart(cart, currentprice, id) {
   try {
     const {
       rows: [user],
     } = await client.query(
       `
       UPDATE users 
-      SET cart=$2 
+      SET cart=$2, 
+      currentprice=$3
       WHERE id=$1 
     `,
-      [id, cart]
+      [id, cart, currentprice]
     );
 
     return user;

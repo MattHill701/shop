@@ -37,7 +37,7 @@ receiptsRouter.post("/checkout", async (req, res, next) => {
   const { id } = req.body
   try {
     const receipts = await createReceipt(req.body);
-    const cart = await updateCart('[]', id)
+    const cart = await updateCart('[]', 0, id)
   res.send({
     receipts,
     cart,

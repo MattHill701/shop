@@ -25,7 +25,7 @@ productsRouter.get("/", async (req, res) => {
   });
 });
 
-productsRouter.post("/delete", async (req, res, next) => {
+productsRouter.delete("/", async (req, res, next) => {
 
   const { id } = req.body
 
